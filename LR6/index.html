@@ -1,0 +1,105 @@
+<html>
+<head>
+ <meta charset="utf-8">
+<title>Практична робота 6</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="data.json"></script>
+ <style>
+  tbody tr:hover  {
+    background-color: #ffbb33;
+    color: #0099CC;
+	cursor:pointer;
+}
+ </style>
+</head>
+<body class="bg-secondary">
+</p></p>
+<div class="container">
+ <div class="row">
+      <div class="col-8">
+<table class="table table-dark table-bordered" id="my_table">
+ <thead>
+<tr>
+<th>Ім'я</th>
+<th>Опис</th>
+<th>Посилання</th>
+</tr>
+ <thead>
+ <tbody id="my_tablebody"></tbody>
+ </table>
+  <script>
+    var local_data = data;
+    var row_data = '';
+    for (var i = 0; i < local_data.length; i++) {
+      var row_data = row_data + '<tr>' +
+        ' <td>' + local_data[i].name + '</td>' +
+        ' <td>' + local_data[i].description + '</td>' +
+        ' <td>' +"<a href='"+ local_data[i].link + "' target='_blank'>Перейти</a>"+'</td>' +
+        '</tr>';
+    }
+    var table_body_element = document.getElementById('my_tablebody');
+    table_body_element.innerHTML = row_data;
+    document.getElementById('my_table').appendChild(table_body_element);
+  </script>
+
+
+
+</div>
+<div class="col-4">
+ <form>
+    <div class="form-group">
+      <label for="name">Ім'я:</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Опис</label>
+      <input type="text" class="form-control" id="description" name="description">
+    </div>
+	<div class="form-group">
+      <label for="link">Посилання</label>
+      <input type="text" class="form-control" id="link" name="link">
+    </div>
+	<button class="btn btn-block btn-info" onclick="addRow(); return false;" >Додати</button>
+	<button class="btn btn-block btn-warning" onclick="editRow(); return false;">Редагувати</button>
+	<button class="btn btn-block btn-danger" onclick="deleteRow(); return false;">Видалити</button>
+	
+  </form>
+ </div>
+</div>
+ <script type="text/javascript" src="data.json"></script>
+ <script>
+//додавання нового запису
+var table=document.getElementById("table");
+var index;
+
+function addRow()
+{
+var events = localStorage.getItem('events')||"[]";
+    events = JSON.parse(events);
+    events.splice(1,4);
+
+}
+//вибірка
+
+function selectedRow(){
+
+}
+//видалення
+function deleteRow(){
+var json = 
+{
+'name': John Doe,
+'nickname': Johnny
+}
+var key = "name";
+delete json[key];
+}
+//редагування
+function editRow(){
+
+}
+
+</script>
+</body>
+</html>

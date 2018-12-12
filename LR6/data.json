@@ -1,0 +1,16 @@
+var data = [{
+  "id": 1,
+  "name": "Facebook",
+  "description": "Соціальна мережа",
+  "link": "https://www.facebook.com/"
+}, {
+ "id": 2,
+  "name": "Практична",
+  "description": "ПР№6",
+  "link": "index.html"
+}, {
+  "id": 3,
+  "name": "Beverlie",
+  "description": "Yeoman",
+  "link": "index.html"
+}]
